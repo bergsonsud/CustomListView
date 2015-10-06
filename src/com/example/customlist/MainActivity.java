@@ -74,10 +74,11 @@ public class MainActivity extends Activity {
                         for (int i = 0; i < response.length(); i++) {
                           try {
                             	JSONObject obj = (JSONObject) response.get(i);
+                            	String id = obj.getString("id");
                             	String nome = obj.getString("nome");
                             	String telefone = obj.getString("telefone");
         
-                            	Cliente cliente = new Cliente(nome, "");
+                            	Cliente cliente = new Cliente(id, nome, telefone);
                                 listaclients.add(cliente);
                             	
                                 
